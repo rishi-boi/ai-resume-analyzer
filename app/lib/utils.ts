@@ -1,8 +1,10 @@
-/**
- * Formats a size in bytes to a human-readable string (e.g., KB, MB, GB).
- * @param bytes - The size in bytes.
- * @returns A human-readable string representing the size.
- */
+import type { ClassValue } from "clsx";
+import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
 export function formatSize(bytes: number): string {
   if (bytes === 0) return "0 Bytes";
   const k = 1024;
